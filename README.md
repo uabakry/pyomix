@@ -1,7 +1,7 @@
 # analysis-workflow
 Analysis Workflow - Programming for Bioinformatics Course Project (Bioinformatics Professional Diploma)
 
-## LIST OF STUDENTS IN GROUP:
+#### LIST OF STUDENTS IN GROUP:
 - Ahmed Omar Lamloum
 - Moahmed Magdy
 - Usama Bakry
