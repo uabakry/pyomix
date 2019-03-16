@@ -18,17 +18,17 @@ The purpose of the programme is to determine the most likely reading frame of a 
 - Output #2
 
 #### SUBTASKS:
-- Task #1
-- Task #2
+1. Task #1
+2. Task #2
 
 #### EXTERNAL MODULES AND PROGRAMMES TO BE USED:
-- Module #1
-- Module #2
+1. Module #1
+2. Module #2
 
 #### EXPECTED DIFFICULTIES:
-- #1
-- #2
+1. #1
+2. #2
 
 #### TASKS TO BE COMPLETED BY THE 4TH OF MAY:
-- Task #1
-- Task #2 
+1. Task #1
+2. Task #2 
