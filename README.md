@@ -6,29 +6,29 @@ Analysis Workflow - Programming for Bioinformatics Course Project (Bioinformatic
 - Moahmed Magdy
 - Usama Bakry
 
-## OVERVIEW:
+#### OVERVIEW:
 The purpose of the programme is to determine the most likely reading frame of a fragment of coding sequence and translate it to protein. It will be assumed that the most likely reading frame is the one that leads to the most similar amino acid sequence between human and macaque. Reading frames that contain a premature stop codon will not be considered.
 
-## INPUTS:
+#### INPUTS:
 - Input #1
 - Input #2
 
-## OUTPUTS:
+#### OUTPUTS:
 - Output #1
 - Output #2
 
-## SUBTASKS:
+#### SUBTASKS:
 - Task #1
 - Task #2
 
-## EXTERNAL MODULES AND PROGRAMMES TO BE USED:
+#### EXTERNAL MODULES AND PROGRAMMES TO BE USED:
 - Module #1
 - Module #2
 
-## EXPECTED DIFFICULTIES:
+#### EXPECTED DIFFICULTIES:
 - #1
 - #2
 
-## TASKS TO BE COMPLETED BY THE 4TH OF MAY:
+#### TASKS TO BE COMPLETED BY THE 4TH OF MAY:
 - Task #1
 - Task #2 
