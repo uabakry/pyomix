@@ -12,7 +12,7 @@ The purpose of the programme is to determine the most likely reading frame of a 
 
 #### INPUTS:
 ```
-python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o 
+python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <output dir>
 ``` 
 
 #### OUTPUTS:
@@ -20,15 +20,18 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o
 - Output #2
 
 #### SUBTASKS:
-1. Task #1
+1. Creating function to making directories for swiss-prot ids
+..* Input: ids file.
+..* Output: list of ids directories.
 2. Task #2
 
 #### EXTERNAL MODULES AND PROGRAMMES TO BE USED:
-1. Module #1
-2. Module #2
+1. NCBI Blast+ 
+2. Clustal Omega (clustalo.py)
+3. Simple Phylogeny Tree (simple_phylogeny.py)
 
 #### EXPECTED DIFFICULTIES:
-1. #1
+1. 
 2. #2
 
 #### TASKS TO BE COMPLETED BY THE 4TH OF MAY:
