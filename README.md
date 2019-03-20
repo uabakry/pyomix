@@ -11,7 +11,9 @@ Analysis Workflow - Programming for Bioinformatics Course Project (Bioinformatic
 The purpose of the programme is to determine the most likely reading frame of a fragment of coding sequence and translate it to protein. It will be assumed that the most likely reading frame is the one that leads to the most similar amino acid sequence between human and macaque. Reading frames that contain a premature stop codon will not be considered.
 
 #### INPUTS:
-'''python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o ''' 
+'''
+python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o 
+''' 
 
 #### OUTPUTS:
 - Output #1
