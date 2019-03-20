@@ -8,7 +8,7 @@ Analysis Workflow - Programming for Bioinformatics Course Project (Bioinformatic
 - Waleed Amer
 
 #### OVERVIEW:
-The purpose of the programme is to determine the most likely reading frame of a fragment of coding sequence and translate it to protein. It will be assumed that the most likely reading frame is the one that leads to the most similar amino acid sequence between human and macaque. Reading frames that contain a premature stop codon will not be considered.
+The overall purpose of theis program is to generate a simple phylogeny tree for multiple sequence alignments obtained from Clustal Omega, throughout a series of steps started by getting the fasta file for a list of swiss-prot ids then performing alignment through NCBI-Blastp then obtaining sequences for ids 
 
 #### INPUTS:
 ```
