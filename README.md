@@ -20,9 +20,9 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
 - Output #2
 
 #### SUBTASKS:
-1. Creating function to making directories for swiss-prot ids
-..* Input: ids file.
-..* Output: list of ids directories.
+1. Creating function to making directories for swiss-prot ids.
+ * Input: ids file.
+ * Output: list of ids directories.
 2. Task #2
 
 #### EXTERNAL MODULES AND PROGRAMMES TO BE USED:
