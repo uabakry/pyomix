@@ -3,7 +3,7 @@ Analysis Workflow - Programming for Bioinformatics Course Project (Bioinformatic
 
 #### LIST OF STUDENTS IN GROUP:
 - Ahmed Omar Lamloum
-- Moahmed Magdy
+- Moahmed Magdy AboelEla
 - Usama Bakry
 - Waleed Amer
 
