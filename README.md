@@ -5,10 +5,10 @@ Analysis Workflow Course Project - Programming for Bioinformatics (Bioinformatic
 - Ahmed Omar Lamloum
 - Mohamed Magdy AboelEla
 - Usama Bakry
-- Waleed Amer
+- Waleed Faheem Amer
 
 #### OVERVIEW:
-The overall purpose of this program is to generate a simple phylogeny tree for multiple sequence alignments obtained from Clustal Omega, throughout a series of steps started by getting the fasta file for a list of swiss-prot ids then performing alignment through NCBI-Blastp then obtaining sequences for ids 
+The overall purpose of this program is to create an analysis workflow that generate a simple phylogeny trees from multiple sequence alignment files for a list of SWISS-Prot ids using Clustal Omega, throughout a series of steps that will be described in the following flowchart.
 
 <p align="center">
   <img src="https://github.com/ubakry/pyomix/blob/master/workflow.png"  width="50%" height="50%">
