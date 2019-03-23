@@ -8,7 +8,7 @@ Analysis Workflow Course Project - Programming for Bioinformatics (Bioinformatic
 - Waleed Faheem Amer
 
 #### OVERVIEW:
-The overall purpose of this program is to create an analysis workflow that generate a simple phylogeny trees from multiple sequence alignment files for a list of SWISS-Prot ids using Clustal Omega, throughout a series of steps that will be described in the following flowchart.
+The overall purpose of PyOmiX is to create an analysis workflow that generate a simple phylogeny trees from multiple sequence alignment files for a list of SWISS-Prot ids using Clustal Omega, throughout a series of steps as described in the following flowchart.
 
 <p align="center">
   <img src="https://github.com/ubakry/pyomix/blob/master/workflow.png"  width="50%" height="50%">
@@ -29,7 +29,7 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
     * Phylogenetic tree from Clustal Omega.
 
 #### SUBTASKS:
-1. Function to make directories for swiss-prot ids. (done)
+1. Function to make directories for swiss-prot ids. **(done)**
    * Input: ids file.
    * Output: list of ids directories.
 2. Function to get fasta file (sequence) using request from UniProt.
@@ -50,7 +50,7 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
 7. Implement python script to run it on the command line.
 
 #### EXTERNAL MODULES AND PROGRAMMES TO BE USED:
-1. Diamond Aligner 
+1. Diamond Aligner.
 2. Clustal Omega (clustalo.py)
 
 #### EXPECTED DIFFICULTIES:
@@ -58,7 +58,7 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
 2. Implementation the python script to run it on command line.
 
 #### TASKS TO BE COMPLETED BY THE 4TH OF MAY:
-1. Function to make directories for swiss-prot ids. (done)
+1. Function to make directories for swiss-prot ids. **(done)**
 2. Function to get fasta file (sequence) using request from UniProt.
 3. Function to align sequence using Diamond.
 4. Function to get fasta file (sequence) using request from NCBI.
