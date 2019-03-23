@@ -20,8 +20,13 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
 ``` 
 
 #### OUTPUTS:
-- Output #1
-- Phylogenatic Trees
+- Directory with subdirectory for each ID from the input list.
+- In each directory:
+    * Sequence fasta file from UniProt.
+    * Alignement file from Diamond.
+    * Sequences fasta file for accessions numbers from NCBI.
+    * Mulitple sequence alignement file from Clustal Omega.
+    * Phylogenetic tree from Clustal Omega.
 
 #### SUBTASKS:
 1. Function to make directories for swiss-prot ids. (done)
