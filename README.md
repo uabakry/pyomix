@@ -1,7 +1,7 @@
 # PyOmiX - Analysis Workflow
 Analysis Workflow Course Project - Programming for Bioinformatics (Bioinformatics Professional Diploma)
 
-#### LIST OF STUDENTS IN GROUP:
+#### GROUP MEMBERS:
 - Ahmed Omar Lamloum
 - Mohamed Magdy AboelEla
 - Usama Bakry
