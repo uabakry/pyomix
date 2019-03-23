@@ -10,6 +10,8 @@ Analysis Workflow Course Project - Programming for Bioinformatics (Bioinformatic
 #### OVERVIEW:
 The overall purpose of theis program is to generate a simple phylogeny tree for multiple sequence alignments obtained from Clustal Omega, throughout a series of steps started by getting the fasta file for a list of swiss-prot ids then performing alignment through NCBI-Blastp then obtaining sequences for ids 
 
+![alt text](https://github.com/ubakry/pyomix/blob/master/workflow.png "PyOmiX Workflow")
+
 #### INPUTS:
 ```
 python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <output dir>
