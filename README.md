@@ -3,7 +3,7 @@ Analysis Workflow Course Project - Programming for Bioinformatics (Bioinformatic
 
 #### GROUP MEMBERS:
 - Ahmed Omar Lamloum
-- Mohamed Magdy AboelEla
+- Mohamed Magdy AboelEla **(Team Leader)**
 - Usama Bakry
 - Waleed Faheem Amer
 
