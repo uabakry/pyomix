@@ -20,7 +20,7 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
 - Phylogenatic Trees
 
 #### SUBTASKS:
-1. Function to make directories for swiss-prot ids.
+1. Function to make directories for swiss-prot ids. (done)
    * Input: ids file.
    * Output: list of ids directories.
 2. Function to get fasta file (sequence) using request.
@@ -41,6 +41,6 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
 2. #2
 
 #### TASKS TO BE COMPLETED BY THE 4TH OF MAY:
-1. Function to make directories for swiss-prot ids.
+1. Function to make directories for swiss-prot ids. (done)
 2. Function to get fasta file (sequence) using request.
 3. Function to align sequence using Blast.
