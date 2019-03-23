@@ -12,6 +12,10 @@ The overall purpose of theis program is to generate a simple phylogeny tree for 
 
 ![alt text](https://github.com/ubakry/pyomix/blob/master/workflow.png "PyOmiX Workflow")
 
+<p align="center">
+  <img src="https://github.com/ubakry/pyomix/blob/master/workflow.png">
+</p>
+
 #### INPUTS:
 ```
 python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <output dir>
