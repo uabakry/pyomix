@@ -1,14 +1,19 @@
 ##########################################################################
 #  - PyOmiX - Analysis Workflow                                          #
 #  - Python Script                                                       #
-#  - April 1,2019                                                        #
+#  - April 6,2019                                                        #
 #  - Copyright: Ahmed Omar, Mohamed Magdy, Usama Bakry, and Waleed Amer  #
 #  - Nile University                                                     #
 ##########################################################################
 
+## project Description ..
+print('PyOmiX v0.1 | by Ahmed Omar, Mohamed Magdy, Usama Bakry and Waleed Amer\n'
+      , 'Check https://github.com/ubakry/pyomix for updates.')
+
 # Importing libraries
 import os
 import argparse
+import subprocess
 
 args = None
 
@@ -46,3 +51,22 @@ def makdirs(file):
 file = open(args['i'])
 makdirs(file)
 file.close()
+
+# ----------------------------------------------------------------------
+# function for alignment using diamond
+# ----------------------------------------------------------------------
+
+def diamond_align(fasta, db):
+    # create refrance database for alignment using diamond (makedb)
+    make_db = ['diamond', 'makedb', '--in', db, '-d', 'db']
+    make_db_proc = subprocess.Popen(make_db, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    # check the process
+    stdout, stderr = make_db_proc.communicate()
+    print(stderr.decode())
+
+    # alignment using blastp
+    diamond = ['diamond', 'blastp', '-q', fasta, '-d', 'db.dmnd', '-f', '6', 'qseqid', '-o', 'id_list.fa']
+    diamond_proc = subprocess.Popen(diamond, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = diamond_proc.communicate()
+    print(stderr.decode())
