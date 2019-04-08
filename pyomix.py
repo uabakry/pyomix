@@ -8,7 +8,7 @@
 
 ## project Description ..
 print('PyOmiX v0.1 | by Ahmed Omar, Mohamed Magdy, Usama Bakry and Waleed Amer\n'
-      , 'Check https://github.com/ubakry/pyomix for updates.')
+      , 'Check https://github.com/ubakry/pyomix for updates.\n')
 
 # Importing libraries
 import os
