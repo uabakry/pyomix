@@ -47,7 +47,7 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
 6. Function to perform multiple sequence alignment and get a phylogenetic tree.
     * Input: fasta file.
     * Output: alignment file and phylogenetic tree file.
-7. Implement python script to run it on the command line.
+7. Implement python script to run it on the command line. **(done)**
 
 #### EXTERNAL MODULES AND PROGRAMMES TO BE USED:
 1. Diamond Aligner.
