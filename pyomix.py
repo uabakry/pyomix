@@ -1,7 +1,7 @@
 ##########################################################################
 #  - PyOmiX - Analysis Workflow                                          #
 #  - Python Script                                                       #
-#  - April 9,2019                                                        #
+#  - April 29,2019                                                       #
 #  - Copyright: Ahmed Omar, Mohamed Magdy, Usama Bakry, and Waleed Amer  #
 #  - Nile University                                                     #
 ##########################################################################
@@ -10,10 +10,15 @@
 print('PyOmiX v0.1 | by Ahmed Omar, Mohamed Magdy, Usama Bakry and Waleed Amer\n'
       , 'Check https://github.com/ubakry/pyomix for updates.\n')
 
+# ----------------------------------------------------------------------
 # Importing libraries
+# ----------------------------------------------------------------------
 import os
 import argparse
 import subprocess
+import requests
+import re
+
 
 args = None
 
@@ -42,6 +47,7 @@ if __name__ == '__main__':
 
 # ----------------------------------------------------------------------
 # create refrance database for alignment using diamond (makedb)
+# ----------------------------------------------------------------------
 print('create refrance database for alignment using diamond (makedb)')
 make_db = ['diamond', 'makedb', '--in', args['d'], '-d', 'db']
 make_db_proc = subprocess.Popen(make_db, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -50,6 +56,7 @@ make_db_proc = subprocess.Popen(make_db, stdout=subprocess.PIPE, stderr=subproce
 stdout, stderr = make_db_proc.communicate()
 print(stderr.decode())
 
+# ----------------------------------------------------------------------
 # Function to make directories for swiss-prot ids
 # ----------------------------------------------------------------------
 def makdirs(file):
@@ -73,3 +80,27 @@ def diamond_align(fasta):
     diamond_proc = subprocess.Popen(diamond, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = diamond_proc.communicate()
     print(stderr.decode())
+
+# ----------------------------------------------------------------------
+# function to download FASTA File from UniProt and NCBI
+# ----------------------------------------------------------------------
+
+def getfasta(id):
+    if re.search(r"[OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9]([A-Z][A-Z0-9]{2}[0-9]){1,2}", id):
+        parameters = {"query": id, "format": "fasta"}
+        fasta = requests.get(
+            "https://www.uniprot.org/uniprot/", params=parameters)
+        fastafile = open(id + ".fasta", "w")
+        fastafile.write(fasta.text)
+        fastafile.close()
+    elif re.search(r"[A-Z][0-9]{5}[.][0-9]|[A-Z]{2}[A-Z_][0-9]{5,9}[.][0-9]", id):
+        parameters = {"db": "protein", "id": id,
+                      "rettype": "fasta", "retmode": "text"}
+        fasta = requests.get(
+            "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi", params=parameters)
+        fastafile = open(id + ".fasta", "w")
+        fastafile.write(fasta.text)
+        fastafile.close()
+    else:
+        print ("Wrong ID .. Check your IDs list")
+            
