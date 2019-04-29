@@ -1,5 +1,5 @@
 # PyOmiX - Analysis Workflow
-Analysis Workflow Course Project - Programming for Bioinformatics (Bioinformatics Professional Diploma)
+Analysis Workflow Course Project - Programming for Bioinformatics (Bioinformatics Professional Diploma at Nile University)
 
 #### GROUP MEMBERS:
 - Ahmed Omar Lamloum
