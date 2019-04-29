@@ -46,7 +46,7 @@ if __name__ == '__main__':
     args = get_args()
 
 # ----------------------------------------------------------------------
-# create refrance database for alignment using diamond (makedb)
+# Creating reference database for alignment using DIAMOND (makedb)
 # ----------------------------------------------------------------------
 print('create refrance database for alignment using diamond (makedb)')
 make_db = ['diamond', 'makedb', '--in', args['d'], '-d', 'db']
@@ -57,7 +57,7 @@ stdout, stderr = make_db_proc.communicate()
 print(stderr.decode())
 
 # ----------------------------------------------------------------------
-# Function to make directories for swiss-prot ids
+# Function to make directories for SWISS-Prot ids
 # ----------------------------------------------------------------------
 def makdirs(file):
     os.mkdir(args['o'] + "/pymoix-results", int(0o755))
@@ -71,7 +71,7 @@ makdirs(file)
 file.close()
 
 # ----------------------------------------------------------------------
-# function for alignment using diamond
+# Function for alignment using DIAMOND
 # ----------------------------------------------------------------------
 
 def diamond_align(fasta):
@@ -82,7 +82,7 @@ def diamond_align(fasta):
     print(stderr.decode())
 
 # ----------------------------------------------------------------------
-# function to download FASTA File from UniProt and NCBI
+# Function to download FASTA File from UniProt and NCBI
 # ----------------------------------------------------------------------
 
 def getfasta(id):
