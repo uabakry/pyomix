@@ -30,17 +30,17 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
 
 #### SUBTASKS:
 01. Function to make directories for swiss-prot ids. **(done)**
-   * Input: ids file.
-   * Output: list of ids directories.
+    * Input: ids file.
+    * Output: list of ids directories.
 02. Function to get fasta file (sequence) using request from UniProt. **(done)**
-   * Input: swiss-prot id.
-   * Output: sequence fasta file.
+    * Input: swiss-prot id.
+    * Output: sequence fasta file.
 03. Function to align sequence using Diamond. **(done)**
-   * Input: sequence fasta file and database file.
-   * Output: alignment file.
+    * Input: sequence fasta file and database file.
+    * Output: alignment file.
 04. Function to get fasta file (sequence) using request from NCBI. **(done)**
-   * Input: accession number.
-   * Output: sequence fasta file.
+    * Input: accession number.
+    * Output: sequence fasta file.
 05. Function to merge multiple fasta files in one fasta file. **(done)**
     * Input: list of fasta files.
     * Output: fasta file.
