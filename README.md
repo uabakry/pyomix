@@ -41,7 +41,7 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
 4. Function to get fasta file (sequence) using request from NCBI. **(done)**
    * Input: accession number.
    * Output: sequence fasta file.
-5. Function to merge multiple fasta files in one fasta file.
+5. Function to merge multiple fasta files in one fasta file. **(done)**
     * Input: list of fasta files.
     * Output: fasta file.
 6. Function to perform multiple sequence alignment and get a phylogenetic tree.
