@@ -6,22 +6,21 @@
 #  - Nile University                                                     #
 ##########################################################################
 
-# project Description
+# ----------------------------------------------------------------------
+# Importing libraries
+# ----------------------------------------------------------------------
 import re
 import requests
 import subprocess
 import argparse
 import os
-print(
-    '========================================================================')
+
+porj_dir=os.getcwd()
+# project Description
+print('========================================================================')
 print('PyOmiX v1.0 | by Ahmed Omar, Mohamed Magdy, Usama Bakry and Waleed Amer.')
 print('Check https://github.com/ubakry/pyomix for updates.')
 print('========================================================================')
-
-# ----------------------------------------------------------------------
-# Importing libraries
-# ----------------------------------------------------------------------
-
 
 args = None
 
@@ -37,8 +36,6 @@ def get_args():
 
     # required argument
     parser.add_argument('-i', action="store", required=True,
-                        help='Swiss-Prot ids txt file directory')
-    parser.add_argument('-ii', action="store", required=True,
                         help='Swiss-Prot ids txt file directory')
     parser.add_argument('-d', action="store", required=True,
                         help='fasta file well be used as refrance for alignment')
@@ -123,12 +120,12 @@ def makdirs(file, parent_dir="/pymoix-results"):
 # ----------------------------------------------------------------------
 # Function for alignment using DIAMOND
 # ----------------------------------------------------------------------
-# def diamond_align(fasta):
-# 	# alignment using blastp
-# 	diamond = ['diamond', 'blastp', '-q', fasta, '-d', 'db.dmnd', '-f', '6', 'qseqid', '-o', args['o'] +"/pymoix-results"+#####+'id_list.txt']
-# 	diamond_proc = subprocess.Popen(diamond, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-# 	stdout, stderr = diamond_proc.communicate()
-# 	print(stderr.decode())
+def diamond_align(fasta):
+	# alignment using blastp
+	diamond = ['diamond', 'blastp', '-q', fasta, '-d', 'db.dmnd', '-f', '6', 'qseqid', '-o', args['o'] +"/pymoix-results"+#####+'id_list.txt']
+	diamond_proc = subprocess.Popen(diamond, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	stdout, stderr = diamond_proc.communicate()
+	print(stderr.decode())
 # ----------------------------------------------------------------------
 
 # ----------------------------------------------------------------------
@@ -144,15 +141,23 @@ def merge(dir):
 # ----------------------------------------------------------------------
 
 # ----------------------------------------------------------------------
-# Function to perform multiple sequence alignment and get a phylogenetic tree.
+# Function to perform multiple sequence alignment.
 # ----------------------------------------------------------------------
 
 
 def clustalo(file):
-    print('Performing multiple sequence alignment and get a phylogenetic tree.')
-	os.system("conda activate")
-    os.system()
-	os.system("conda deactivate")
+    print('Performing multiple sequence alignment.')
+    os.system("python3 "+ porj_dir +"/modules/clustalo.py -i "+file+" -o clustal-res.fasta")
+# ----------------------------------------------------------------------
+
+# ----------------------------------------------------------------------
+# Function to create a phylogenetic tree.
+# ----------------------------------------------------------------------
+
+
+def phylo(file):
+    print('Creating the phylogenetic tree.')
+    os.system("python3 "+ porj_dir +"/modules/simple_phylogeny.py --sequence "+file+" --email info@pyomix.com")
 # ----------------------------------------------------------------------
 
 # ----------------------------------------------------------------------
@@ -164,9 +169,6 @@ def main():
     file = open(args['i'])
     makdirs(file)
     file.close()
-    file_2 = open(args['ii'])
-    makdirs(file_2, "/Q9SBB2")
-    file_2.close()
 # ----------------------------------------------------------------------
 
 
