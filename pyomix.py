@@ -38,7 +38,7 @@ def get_args():
 	parser.add_argument('-i', action="store", required=True,
 						help='Swiss-Prot ids txt file directory')
 	parser.add_argument('-d', action="store", required=True,
-						help='fasta file well be used as refrance for alignment')
+						help='The reference database')
 
 	# optional arguments
 	parser.add_argument('-o', action="store",
@@ -98,7 +98,7 @@ def getfasta(id):
 # ----------------------------------------------------------------------
 def diamond_align(fasta,id):
 	# alignment using blastp
-	os.system(porj_dir+'/modules/diamond blastp -q '+ fasta+ ' -d '+args['o']+'/db.dmnd -f 6 qseqid -o '+id+'_id_ls.txt')
+	os.system(porj_dir+'/modules/diamond blastp -q '+ fasta+ ' -d '+args['o']+'/db.dmnd -f 6 sseqid -o '+id+'_id_ls.txt')
 	
 	# diamond = ['diamond', 'blastp', '-q', fasta, '-d', 'db.dmnd', '-f', '6', 'qseqid', '-o', args['o'] +"/pymoix-results"+#####+'id_list.txt']
 	# diamond_proc = subprocess.Popen(diamond, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
