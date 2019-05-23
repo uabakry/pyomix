@@ -15,7 +15,7 @@ import subprocess
 import argparse
 import os
 
-porj_dir=os.getcwd()
+proj_dir=os.getcwd()
 # project Description
 print('========================================================================')
 print('PyOmiX v1.0 | by Ahmed Omar, Mohamed Magdy, Usama Bakry and Waleed Amer.')
@@ -52,19 +52,9 @@ def get_args():
 # ----------------------------------------------------------------------
 # Creating reference database for alignment using DIAMOND (makedb)
 # ----------------------------------------------------------------------
-
-
 def makedb():
 	print('create refrance database for alignment using diamond (makedb)')
-	os.system(porj_dir+'/modules/diamond makedb --in \''+ args['d']+ '\' -d '+args['o']+'db')
-
-	# make_db = ['diamond', 'makedb', '--in', args['d'], '-d', 'db']
-	# make_db_proc = subprocess.Popen(
-	#     make_db, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
-	# # check the process
-	# stdout, stderr = make_db_proc.communicate()
-	# print(stderr.decode())
+	os.system(proj_dir+'/modules/diamond makedb --in \''+ args['d']+ '\' -d '+args['o']+'db')
 # ----------------------------------------------------------------------
 
 # ----------------------------------------------------------------------
@@ -98,19 +88,12 @@ def getfasta(id):
 # ----------------------------------------------------------------------
 def diamond_align(fasta,id):
 	# alignment using blastp
-	os.system(porj_dir+'/modules/diamond blastp -q '+ fasta+ ' -d '+args['o']+'/db.dmnd -f 6 sseqid -o '+id+'_id_ls.txt')
-	
-	# diamond = ['diamond', 'blastp', '-q', fasta, '-d', 'db.dmnd', '-f', '6', 'qseqid', '-o', args['o'] +"/pymoix-results"+#####+'id_list.txt']
-	# diamond_proc = subprocess.Popen(diamond, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-	# stdout, stderr = diamond_proc.communicate()
-	# print(stderr.decode())
+	os.system(proj_dir+'/modules/diamond blastp -q '+ fasta+ ' -d '+args['o']+'/db.dmnd -f 6 sseqid -o '+id+'_id_ls.txt')
 # ----------------------------------------------------------------------
 
 # ----------------------------------------------------------------------
 # Function to merge multiple fasta files in one fasta file.
 # ----------------------------------------------------------------------
-
-
 def merge(dir):
 	print('Merging multiple fasta files in one fasta file')
 	files = dir + '/*.fasta'
@@ -121,28 +104,22 @@ def merge(dir):
 # ----------------------------------------------------------------------
 # Function to perform multiple sequence alignment.
 # ----------------------------------------------------------------------
-
-
 def clustalo(file,id):
 	print('Performing multiple sequence alignment.')
-	os.system("python3 "+ porj_dir +"/modules/clustalo.py --sequence "+file+" --stype protein --outfile "+id+"_clustal_res.fasta --email ubakry94@gmail.com")
+	os.system("python3 "+ proj_dir +"/modules/clustalo.py --sequence "+file+" --stype protein --outfile "+id+"_clustal_res --email ubakry94@gmail.com")
 # ----------------------------------------------------------------------
 
 # ----------------------------------------------------------------------
 # Function to create a phylogenetic tree.
 # ----------------------------------------------------------------------
-
-
 def phylo(file):
 	print('Creating the phylogenetic tree.')
-	os.system("python3 "+ porj_dir +"/modules/simple_phylogeny.py --sequence "+file+" --email ubakry94@gmail.com")
+	os.system("python3 "+ proj_dir +"/modules/simple_phylogeny.py --sequence "+file+" --email ubakry94@gmail.com")
 # ----------------------------------------------------------------------
 
 # ----------------------------------------------------------------------
 # Function to make directories for SWISS-Prot ids
 # ----------------------------------------------------------------------
-
-
 def makdirs(file, parent_dir="/pymoix-results"):
 	if parent_dir == "/pymoix-results":
 		os.mkdir(args['o'] + parent_dir, int(0o755))
@@ -162,7 +139,7 @@ def makdirs(file, parent_dir="/pymoix-results"):
 				ids_file.close()
 				all_file=id_dir_path+"/align_accessions/all.fasta"
 				clustalo(all_file,id)
-				cls_file=id_dir_path+"/"+id+"_clustal_res.fasta"
+				cls_file=id_dir_path+"/"+id+"_clustal_res.sequence.txt"
 				phylo(cls_file)
 			os.chdir(args['o'] + parent_dir)
 	else:
