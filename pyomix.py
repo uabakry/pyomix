@@ -171,7 +171,7 @@ def makdirs(file, parent_dir="/pymoix-results"):
 		os.chdir(dir_path)
 		for id in file:
 			id=id.rstrip("\n")
-			getfasta(id.split("|")[1])
+			getfasta(id)
 		merge(dir_path)
 		os.chdir(args['o'] + "/pymoix-results" + parent_dir)
 
