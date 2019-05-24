@@ -141,18 +141,6 @@ def clustalo(file,id):
 # ----------------------------------------------------------------------
 
 # ----------------------------------------------------------------------
-# Creating a phylogenetic tree.
-# ----------------------------------------------------------------------
-def phylo(file):
-	# Printing on terminal
-	print('[    PROCESS    ] Creating the phylogenetic tree...')
-	# Running the simple phylogeny python script
-	# --sequence -> the input file (the output file from clustalo)
-	# --email -> the user's email
-	os.system("python3 "+ proj_dir +"/modules/simple_phylogeny.py --sequence "+file+" --email ubakry94@gmail.com")
-# ----------------------------------------------------------------------
-
-# ----------------------------------------------------------------------
 # Making directories for ids
 # ----------------------------------------------------------------------
 def makdirs(file, parent_dir="/pymoix-results"):
@@ -191,10 +179,6 @@ def makdirs(file, parent_dir="/pymoix-results"):
 				all_file=id_dir_path+"/align_accessions/all.fasta"
 				# Calling clustalo function
 				clustalo(all_file,id)
-				# Creating variable with directory path of clustalo output file
-				cls_file=id_dir_path+"/"+id+"_clustal_res.sequence.txt"
-				# Calling simple phylogeny function
-				phylo(cls_file)
 			# Changing the working directory to the parent directory
 			os.chdir(args['o'] + parent_dir)
 	else:
