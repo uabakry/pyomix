@@ -32,25 +32,22 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
 01. Function to make directories for swiss-prot ids. **(done)**
     * Input: ids file.
     * Output: list of ids directories.
-02. Function to get fasta file (sequence) using request from UniProt. **(done)**
-    * Input: swiss-prot id.
+02. Function to get fasta file (sequence) using request from UniProt and NCBI. **(done)**
+    * Input: swiss-prot id or NCBI accession number.
     * Output: sequence fasta file.
 03. Function to align sequence using Diamond. **(done)**
     * Input: sequence fasta file and database file.
     * Output: alignment file.
-04. Function to get fasta file (sequence) using request from NCBI. **(done)**
-    * Input: accession number.
-    * Output: sequence fasta file.
-05. Function to merge multiple fasta files in one fasta file. **(done)**
+04. Function to merge multiple fasta files in one fasta file. **(done)**
     * Input: list of fasta files.
     * Output: fasta file.
-06. Function to perform multiple sequence alignment. **(done)**
+05. Function to perform multiple sequence alignment. **(done)**
     * Input: fasta file.
     * Output: multiple sequence alignment file.
-07. Function to create phylogenetic tree. **(done)**
+06. Function to create phylogenetic tree. **(done)**
     * Input: multiple sequence alignment file.
     * Output: Phylogenetic tree file.
-08. Implement python script to run it on the command line. **(done)**
+07. Implement python script to run it on the command line. **(done)**
 
 #### EXTERNAL MODULES AND PROGRAMMES TO BE USED:
 01. Diamond Aligner.
