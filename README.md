@@ -16,7 +16,7 @@ The overall purpose of PyOmiX is to create an analysis workflow that generate a 
 
 #### INPUTS:
 ```
-python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <output dir>
+python3 pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <output dir>
 ``` 
 
 #### OUTPUTS:
@@ -25,8 +25,7 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
     * Sequence fasta file from UniProt.
     * Alignment file from Diamond.
     * Sequences fasta file for accessions numbers from NCBI.
-    * Mulitple sequence alignment file from Clustal Omega.
-    * Phylogenetic tree from Simple Phylogeny.
+    * Mulitple sequence alignment file and phylogenetic tree from Clustal Omega.
 
 #### SUBTASKS:
 01. Function to make directories for swiss-prot ids. **(done)**
@@ -41,25 +40,19 @@ python pyomix.py -i <swiss-prot ids file dir> -d <database fasta file> -o <outpu
 04. Function to merge multiple fasta files in one fasta file. **(done)**
     * Input: list of fasta files.
     * Output: fasta file.
-05. Function to perform multiple sequence alignment. **(done)**
+05. Function to perform multiple sequence alignment and create phylogenetic tree. **(done)**
     * Input: fasta file.
-    * Output: multiple sequence alignment file.
-06. Function to create phylogenetic tree. **(done)**
-    * Input: multiple sequence alignment file.
-    * Output: Phylogenetic tree file.
-07. Implement python script to run it on the command line. **(done)**
+    * Output: multiple sequence alignment file and phylogenetic tree..
+06. Implement python script to run it on the command line. **(done)**
 
 #### EXTERNAL MODULES AND PROGRAMMES TO BE USED:
 01. Diamond Aligner.
 02. Clustal Omega (clustalo.py)
-03. Simple Phylogeny (simple_phylogeny.py)
 
 #### EXPECTED DIFFICULTIES:
-01. Unsuitability of the extracted phylogenetic tree from Clustal Omega, so, we will use Simple Phylogeny Tree module instead.
-02. Implementation the python script to run it on command line.
+01. Implementation the python script to run it on command line.
 
 #### TASKS TO BE COMPLETED BY THE 4TH OF MAY:
 01. Function to make directories for swiss-prot ids. **(done)**
-02. Function to get fasta file (sequence) using request from UniProt. **(done)**
+02. Function to get fasta file (sequence) using request from UniProt and NCBI. **(done)**
 03. Function to align sequence using Diamond. **(done)**
-04. Function to get fasta file (sequence) using request from NCBI. **(done)**
