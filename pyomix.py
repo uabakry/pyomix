@@ -58,10 +58,12 @@ def get_args():
 def makedb():
 	# Printing on terminal
 	print('[    PROCESS    ] Creating refrance database for alignment using diamond (makedb command)...')
+	# Getting the parent directory of the database
+	db_dir=os.path.abspath(os.path.join(args['d'], '..'))
 	# Running the makedb command
 	# --in -> the input database
 	# -d -> the output indexed database that will be used in alignment
-	os.system(proj_dir+'/modules/diamond makedb --in \''+ args['d']+ '\' -d '+args['o']+'db')
+	os.system(proj_dir+'/modules/diamond makedb --in \''+ args['d']+ '\' -d '+db_dir+'/db')
 # ----------------------------------------------------------------------
 
 # ----------------------------------------------------------------------
@@ -104,12 +106,14 @@ def getfasta(id):
 def diamond_align(fasta,id):
 	# Printing on terminal
 	print('[    PROCESS    ] Aligning fasta file of the id: '+id+'...')
+	# Getting the parent directory of the database
+	db_dir=os.path.abspath(os.path.join(args['d'], '..'))
 	# Running the blastp command
 	# -q -> the input fasta file
 	# -d -> the output indexed database that will be used in alignment
 	# -f -> the output format
 	# -o -> the output file name
-	os.system(proj_dir+'/modules/diamond blastp -q '+ fasta+ ' -d '+args['o']+'/db.dmnd -f 6 sseqid -o '+id+'_id_ls.txt')
+	os.system(proj_dir+'/modules/diamond blastp -q '+ fasta+ ' -d '+db_dir+'/db.dmnd -f 6 sseqid -o '+id+'_id_ls.txt')
 # ----------------------------------------------------------------------
 
 # ----------------------------------------------------------------------
@@ -207,7 +211,10 @@ def main():
 	# Opening the input file that containing swiss-prot ids
 	file = open(args['i'])
 	# Calling makedb() function
-	makedb()
+	db_dir=os.path.abspath(os.path.join(args['d'], '..'))+"/db.dmnd"
+	exists = os.path.isfile(db_dir)
+	if not exists:
+		makedb()
 	# Calling makdirs() function with the swiss-prot ids file as input
 	makdirs(file)
 	# Closing the swiss-prot ids file
